@@ -13,13 +13,6 @@ describe('validator module performs basic validation of', () => {
   }
 });
 
-    // let str = 'yes';
-    // let num = 1;
-    // let arr = ['a'];
-    // let obj = {x:'y'};
-    // let func = () => {};
-    // let bool = false;
-
     //regular cases
     expect(validator.isString(str)).toBeTruthy();
 
@@ -51,12 +44,11 @@ describe('validator module performs basic validation of', () => {
     expect(true).toBeFalsy();
   });
 
-});
-
 describe('validator module performs complex validations', () => {
 
   it('validates the presence of required object properties at any level', () => {
     // i.e. does person.hair.color exist and have a good value, not just person.hair
+    let({person: { hair: { color}}}).toBeTruthy();
     expect(true).toBeFalsy();
   });
 
