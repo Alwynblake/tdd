@@ -1,6 +1,6 @@
 'use strict';
 
-const validator = require('.lib/validator');
+const validator = require('./lib/validator');
 
 // Vinicio - add some code here to be able to use the module using console.log
 

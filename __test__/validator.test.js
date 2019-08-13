@@ -81,11 +81,13 @@ describe ('#validator', () => {
   });
 });
 
-// describe ('#validator', () => {
-//   describe('isFunction', () => {
-//     test('')
-//   })
-// })
+describe ('#validator', () => {
+  describe('ifFunction', () => {
+    test('that 3 and 5 make 8', () => {
+      expect(3 + 5).toBe(8);
+    });
+  });
+});
 
 describe('#isObjectValid', () => {
   test('regular cases', () => {
