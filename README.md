@@ -20,3 +20,6 @@ All "required" properties present and have values.
 * Implement one numeric rule
 * Implement one type-based rule
 * Implement the required properties rule
+
+### to run test
+'npm run test'
