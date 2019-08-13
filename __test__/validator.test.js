@@ -48,7 +48,6 @@ describe('validator module performs complex validations', () => {
 
   it('validates the presence of required object properties at any level', () => {
     // i.e. does person.hair.color exist and have a good value, not just person.hair
-    let({person: { hair: { color}}}).toBeTruthy();
     expect(true).toBeFalsy();
   });
 
@@ -70,3 +69,36 @@ describe('validator module performs complex validations', () => {
   // TODO: Cover so, so many more cases
 
 });
+
+describe ('#validator', () => {
+  describe('#islessThanTen', () => {
+    test('regular cases', () => {
+      expect(validator.isLessThanTen(5)).toEqual(true);
+      expect(validator.isLessThanTen(11)).toEqual(false);
+      expect(validator.isLessThanTen(10)).toEqual(false);
+
+    });
+  });
+});
+
+// describe ('#validator', () => {
+//   describe('isFunction', () => {
+//     test('')
+//   })
+// })
+
+describe('#isObjectValid', () => {
+  test('regular cases', () => {
+    const schema = {
+      fields: {
+        id: {type: 'string'},
+        age: {type: 'number'},
+        favoriteToys: {type: 'object'}
+      },
+    };
+    expect(validator.isObjectValid(
+        {id: 'Jace', age: 2, favoriteToys: {}}, schema
+    )).toEqual(true);
+  });
+});
+
